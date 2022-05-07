@@ -1,12 +1,16 @@
 namespace Malfurion.WebApi.Middlewares;
+using Microsoft.Extensions.Logging;
 
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
+    private readonly ILogger<ExceptionMiddleware> _logger;
     public ExceptionMiddleware(
-        RequestDelegate next)
+        RequestDelegate next,
+        ILogger<ExceptionMiddleware> logger)
     {
         _next = next;
+        _logger = logger;
     }
 
     public async Task Invoke(HttpContext context)
@@ -23,6 +27,8 @@ public class ExceptionMiddleware
                 Message = ex.Message,
             };
             await context.Response.WriteAsync(JsonConvert.SerializeObject(responseBody));
+            
+            _logger.LogError(ex, ex.Message);
         }
     }
 }
