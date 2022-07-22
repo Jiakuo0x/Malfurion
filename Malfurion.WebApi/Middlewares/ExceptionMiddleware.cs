@@ -22,9 +22,10 @@ public class ExceptionMiddleware
         catch (Exception ex)
         {
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            var responseBody = new
+            var responseBody = new Models.Response
             {
-                Message = ex.Message,
+                IsSuccess = false,
+                ErrorMessage = ex.Message,
             };
             await context.Response.WriteAsync(JsonConvert.SerializeObject(responseBody));
             
