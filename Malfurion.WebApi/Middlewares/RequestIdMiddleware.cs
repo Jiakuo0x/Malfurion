@@ -9,20 +9,21 @@ public class RequestIdMiddleware
     }
     public async Task Invoke(HttpContext context)
     {
-        if(context.Request.Headers.TryGetValue("X-Request-Id", out var requestIdHeader))
+        if (context.Request.Headers.TryGetValue(Constants.HttpHeader.RequestId, out var requestIdHeader) && requestIdHeader.Count > 0)
         {
-            if(requestIdHeader.Count > 0)
-            {
-                context.TraceIdentifier = string.Join(";", requestIdHeader);
-            }
+            context.TraceIdentifier = string.Join(";", requestIdHeader);
         }
         else
         {
             context.TraceIdentifier = Guid.NewGuid().ToString();
         }
-        
+
         await _next(context);
 
-        context.Response.Headers.TryAdd("X-Request-Id", context.TraceIdentifier);
+        if(!context.Response.Headers.TryAdd(Constants.HttpHeader.RequestId, context.TraceIdentifier))
+        {
+            context.Response.Headers.Remove(Constants.HttpHeader.RequestId);
+            context.Response.Headers.Add(Constants.HttpHeader.RequestId, context.TraceIdentifier);
+        }
     }
 }
