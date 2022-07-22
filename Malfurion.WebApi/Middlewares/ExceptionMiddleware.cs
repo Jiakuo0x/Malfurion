@@ -21,6 +21,8 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message);
+
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             var responseBody = new Models.Response
             {
@@ -28,8 +30,6 @@ public class ExceptionMiddleware
                 ErrorMessage = ex.Message,
             };
             await context.Response.WriteAsync(JsonConvert.SerializeObject(responseBody));
-            
-            _logger.LogError(ex, ex.Message);
         }
     }
 }

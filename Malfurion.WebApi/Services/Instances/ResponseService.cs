@@ -1,7 +1,7 @@
 namespace Malfurion.WebApi.Services.Instances;
 using Models;
 
-internal class ResponseService : IResponseService
+public class ResponseService : IResponseService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     public ResponseService(IHttpContextAccessor httpContextAccessor)

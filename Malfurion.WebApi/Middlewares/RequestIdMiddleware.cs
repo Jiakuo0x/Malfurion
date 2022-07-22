@@ -17,13 +17,13 @@ public class RequestIdMiddleware
         {
             context.TraceIdentifier = Guid.NewGuid().ToString();
         }
-
-        await _next(context);
-
-        if(!context.Response.Headers.TryAdd(Constants.HttpHeader.RequestId, context.TraceIdentifier))
+        
+        if (!context.Response.Headers.TryAdd(Constants.HttpHeader.RequestId, context.TraceIdentifier))
         {
             context.Response.Headers.Remove(Constants.HttpHeader.RequestId);
             context.Response.Headers.Add(Constants.HttpHeader.RequestId, context.TraceIdentifier);
         }
+
+        await _next(context);
     }
 }
