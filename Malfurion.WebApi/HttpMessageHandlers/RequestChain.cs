@@ -14,10 +14,15 @@ public class RequestChain : DelegatingHandler
     {
         var response = await base.SendAsync(request, cancellationToken);
 
-        var responseChainHeader = response.Headers.GetValues(HttpHeader.RequestChain);
-
         var tempHeader = _httpContextAccessor.HttpContext.Response.Headers[HttpHeader.RequestChain].ToList();
-        tempHeader.AddRange(responseChainHeader);
+        if (response.Headers.TryGetValues(HttpHeader.RequestChain, out var responseChainHeader))
+        {
+            tempHeader.AddRange(responseChainHeader);
+        }
+        else
+        {
+            tempHeader.Add(request.RequestUri?.ToString());
+        }
         _httpContextAccessor.HttpContext.Response.Headers[HttpHeader.RequestChain] = tempHeader.ToArray();
 
         return response;
