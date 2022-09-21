@@ -5,12 +5,15 @@ public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionMiddleware> _logger;
+    private readonly Services.ResponseService _response;
     public ExceptionMiddleware(
         RequestDelegate next,
-        ILogger<ExceptionMiddleware> logger)
+        ILogger<ExceptionMiddleware> logger,
+        Services.ResponseService response)
     {
         _next = next;
         _logger = logger;
+        _response = response;
     }
 
     public async Task Invoke(HttpContext context)
@@ -23,13 +26,8 @@ public class ExceptionMiddleware
         {
             _logger.LogError(ex, ex.Message);
 
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            var responseBody = new Models.Response
-            {
-                IsSuccess = false,
-                ErrorMessage = ex.Message,
-            };
-            await context.Response.WriteAsync(JsonConvert.SerializeObject(responseBody));
+            var dto = _response.InternalServerError(ex.Message);
+            await context.Response.WriteAsync(JsonConvert.SerializeObject(dto));
         }
     }
 }
