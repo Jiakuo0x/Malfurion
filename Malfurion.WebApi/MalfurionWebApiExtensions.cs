@@ -11,7 +11,6 @@ public static class MalfurionWebApiExtensions
 
     public static IApplicationBuilder UseMalfurionWebApi(this IApplicationBuilder app)
     {
-        app.UseMiddleware<HttpCodeMiddleware>();
         app.UseMiddleware<ExceptionMiddleware>();
         return app;
     }
