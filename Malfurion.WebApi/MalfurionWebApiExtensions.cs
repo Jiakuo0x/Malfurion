@@ -5,7 +5,7 @@ public static class MalfurionWebApiExtensions
 {
     public static IServiceCollection AddMalfurionWebApi(this IServiceCollection services)
     {
-        services.AddScoped<ResponseService>();
+        services.AddScoped<Response>();
         return services;
     }
 

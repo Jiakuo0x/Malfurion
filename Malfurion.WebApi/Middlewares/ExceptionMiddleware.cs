@@ -4,19 +4,15 @@ using Microsoft.Extensions.Logging;
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionMiddleware> _logger;
-    private readonly Services.ResponseService _response;
-    public ExceptionMiddleware(
-        RequestDelegate next,
-        ILogger<ExceptionMiddleware> logger,
-        Services.ResponseService response)
+    public ExceptionMiddleware(RequestDelegate next)
     {
         _next = next;
-        _logger = logger;
-        _response = response;
     }
 
-    public async Task Invoke(HttpContext context)
+    public async Task Invoke(
+        HttpContext context,
+        ILogger<ExceptionMiddleware> logger,
+        Response response)
     {
         try
         {
@@ -24,9 +20,9 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            logger.LogError(ex, ex.Message);
 
-            var dto = _response.InternalServerError(ex.Message);
+            var dto = response.InternalServerError(ex.Message);
             await context.Response.WriteAsync(JsonConvert.SerializeObject(dto));
         }
     }

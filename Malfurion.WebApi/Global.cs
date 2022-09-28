@@ -6,3 +6,4 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Newtonsoft.Json;
 
 global using Malfurion.WebApi.Dtos;
+global using Malfurion.WebApi.Services;
