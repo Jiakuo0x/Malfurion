@@ -1,0 +1,12 @@
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\bin\Debug\net6.0\Malfurion.AutoMapper.deps.json
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\bin\Debug\net6.0\Malfurion.AutoMapper.dll
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\bin\Debug\net6.0\Malfurion.AutoMapper.pdb
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.csproj.AssemblyReference.cache
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.AssemblyInfoInputs.cache
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.AssemblyInfo.cs
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.csproj.CoreCompileInputs.cache
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.dll
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\refint\Malfurion.AutoMapper.dll
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\Malfurion.AutoMapper.pdb
+C:\Developments\Malfurion\Malfurion.AutoMapper\src\obj\Debug\net6.0\ref\Malfurion.AutoMapper.dll
