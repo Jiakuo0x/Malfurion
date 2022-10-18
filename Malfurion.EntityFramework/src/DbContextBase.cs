@@ -2,6 +2,7 @@ namespace Malfurion.EntityFramework;
 
 public class DbContextBase : DbContext
 {
+    public DbContextBase(DbContextOptions options) : base(options) { }
     public override int SaveChanges()
     {
         var entries = this.ChangeTracker.Entries()
@@ -14,9 +15,9 @@ public class DbContextBase : DbContext
                 continue;
 
             if (entry.State is EntityState.Added)
-                model.CreatedOn = utcTime;
+                model.Created = utcTime;
 
-            model.LastUpdateOn = utcTime;
+            model.LastUpdated = utcTime;
         }
 
         return base.SaveChanges();
