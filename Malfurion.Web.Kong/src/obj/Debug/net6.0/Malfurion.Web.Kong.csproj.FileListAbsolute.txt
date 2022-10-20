@@ -1,0 +1,12 @@
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\bin\Debug\net6.0\Malfurion.Web.Kong.deps.json
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\bin\Debug\net6.0\Malfurion.Web.Kong.dll
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\bin\Debug\net6.0\Malfurion.Web.Kong.pdb
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.csproj.AssemblyReference.cache
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.GeneratedMSBuildEditorConfig.editorconfig
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.AssemblyInfoInputs.cache
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.AssemblyInfo.cs
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.csproj.CoreCompileInputs.cache
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.dll
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\refint\Malfurion.Web.Kong.dll
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\Malfurion.Web.Kong.pdb
+C:\Developments\Malfurion\Malfurion.Web.Kong\src\obj\Debug\net6.0\ref\Malfurion.Web.Kong.dll
