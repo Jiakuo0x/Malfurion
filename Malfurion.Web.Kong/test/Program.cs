@@ -9,6 +9,5 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.MapGet("/", () => "Hello World!");
-app.MapGet("/register", (RegisterManager register) => register.Register());
 
 app.Run();

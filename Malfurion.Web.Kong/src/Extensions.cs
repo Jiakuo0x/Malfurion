@@ -7,7 +7,6 @@ public static class Extentions
 {
     public static IServiceCollection AddMalfurionWebKong(this IServiceCollection services)
     {
-        services.AddSingleton<RegisterManager>();
         services.AddHostedService<RegisterService>();
         return services;
     }
