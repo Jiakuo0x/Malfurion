@@ -2,11 +2,11 @@ namespace Malfurion.Web.Middlewares;
 public class ApiRequestLogMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionMiddleware> _logger;
+    private readonly ILogger<ApiRequestLogMiddleware> _logger;
 
     public ApiRequestLogMiddleware(
         RequestDelegate next,
-        ILogger<ExceptionMiddleware> logger)
+        ILogger<ApiRequestLogMiddleware> logger)
     {
         _next = next;
         _logger = logger;
