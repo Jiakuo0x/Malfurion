@@ -1,0 +1,12 @@
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\bin\Debug\net6.0\Malfurion.Web.Responser.deps.json
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\bin\Debug\net6.0\Malfurion.Web.Responser.dll
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\bin\Debug\net6.0\Malfurion.Web.Responser.pdb
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.csproj.AssemblyReference.cache
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.AssemblyInfoInputs.cache
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.AssemblyInfo.cs
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.csproj.CoreCompileInputs.cache
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.dll
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\refint\Malfurion.Web.Responser.dll
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\Malfurion.Web.Responser.pdb
+C:\Developments\Malfurion\Malfurion.Web.Responser\src\obj\Debug\net6.0\ref\Malfurion.Web.Responser.dll
