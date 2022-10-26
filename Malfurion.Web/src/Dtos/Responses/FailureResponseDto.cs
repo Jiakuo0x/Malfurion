@@ -1,6 +1,6 @@
 namespace Malfurion.Web.Dtos.Responses;
 
-public class FailureResponseDto : ResponseDto
+internal class FailureResponseDto : ResponseDto
 {
     public FailureResponseDto(string errorMessage) => this.ErrorMessage = errorMessage;
     public FailureResponseDto(string errorCode, string errorMessage)

@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QRtRf4ojDFhwTrx3wT7pzrs6fkjPncyUnTP9PB3/5QiAbVcV7mAsfVaNlYG6++XcbNN8lf/lzAWOOnpK7DaHlA==",
+  "dgSpecHash": "a/nsYWn8RZX9qwOADs5B6u83o24/SzKTPKk+I1XeOu8xSbDrc8tbXRBBnDwFEveRmStuTD7H5b2ZYK9ojdeweg==",
   "success": true,
   "projectFilePath": "C:\\Developments\\Malfurion\\Malfurion.Web.Kong\\src\\Malfurion.Web.Kong.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zhang\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\zhang\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\zhang\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

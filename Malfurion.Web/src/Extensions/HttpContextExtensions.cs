@@ -1,6 +1,6 @@
 namespace Malfurion.Web.Extensions;
 
-public static class HttpContextExtensions
+internal static class Extensions
 {
     public static bool SetHttpStatus(this HttpResponse httpResponse, HttpStatusCode httpStatusCode)
     {
