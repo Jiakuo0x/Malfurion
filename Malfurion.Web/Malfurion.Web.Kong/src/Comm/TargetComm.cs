@@ -1,5 +1,5 @@
 namespace Malfurion.Web.Kong.Comm;
-
+using Dtos;
 internal class TargetComm : CommBase
 {
     public TargetComm(string adminApiAddr) : base(adminApiAddr) { }
@@ -11,5 +11,16 @@ internal class TargetComm : CommBase
             Target = targetAddr,
         });
         var result = await response.Content.ReadAsStringAsync();
+    }
+
+    public async Task<TargetsReadDto?> GetTargets(string upstreamName)
+    {
+        HttpClient client = new HttpClient();
+        var responseMessage = await client.GetAsync($"{base.AdminApiAddr}/{Upstreams}/{upstreamName}/{Targets}/all/");
+
+        if (responseMessage.IsSuccessStatusCode)
+            return await responseMessage.Content.ReadFromJsonAsync<TargetsReadDto>();
+        else
+            return null;
     }
 }
