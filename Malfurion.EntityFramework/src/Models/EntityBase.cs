@@ -10,3 +10,9 @@ public class EntityBase
     [Precision(0)]
     public DateTime LastUpdated { get; set; }
 }
+
+public class EntityBase<T> : EntityBase
+{
+    [Key]
+    public new T Id { get; set; } = default!;
+}

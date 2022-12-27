@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<TestContext>(options => options.UseNpgsql(builder.Configuration["ConnectionStrings:Text"]));
+builder.Services.AddDbContext<TestContext>(options => options.UseSqlite(builder.Configuration["ConnectionStrings:Text"]));
 
 var app = builder.Build();
 app.UseSwagger();
