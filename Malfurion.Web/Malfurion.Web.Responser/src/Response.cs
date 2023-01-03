@@ -17,6 +17,7 @@ public class Response
         }
     ), HttpStatusCode.OK);
     public ResponseDto BadRequest(string errorMessage) => Custom(new FailureResponseDto(errorMessage), HttpStatusCode.BadRequest);
+    public ResponseDto Unauthorized(string errorMessage) => Custom(new FailureResponseDto(errorMessage), HttpStatusCode.Unauthorized);
     public ResponseDto InternalServerError(string errorMessage) => Custom(new FailureResponseDto(errorMessage), HttpStatusCode.InternalServerError);
     public ResponseDto Custom(ResponseDto responseDto, HttpStatusCode httpStatusCode)
     {

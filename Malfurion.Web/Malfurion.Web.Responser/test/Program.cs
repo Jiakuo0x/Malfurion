@@ -6,5 +6,6 @@ var app = builder.Build();
 
 app.MapGet("/ok", (Response response) => response.Ok("okok"));
 app.MapGet("/bad", (Response response) => response.BadRequest("badbad"));
+app.MapGet("/au", (Response response) => response.Unauthorized("Unauthorized"));
 
 app.Run();
