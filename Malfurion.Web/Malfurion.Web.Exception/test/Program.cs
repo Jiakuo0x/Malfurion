@@ -9,5 +9,13 @@ app.MapGet("/", () =>
 {
     throw new Exception("test");
 });
+app.MapGet("/1", () =>
+{
+    throw new BadRequest("badreuqest");
+});
+app.MapGet("/2", () =>
+{
+    throw new Unauthorized("unauthorized");
+});
 
 app.Run();
