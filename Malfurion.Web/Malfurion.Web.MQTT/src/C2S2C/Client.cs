@@ -32,22 +32,13 @@ public class Client
         await _mqttClient.PublishStringAsync(topic, message);
     }
 
-    public async Task SubscribeAsync(string topic, Action<string> action, Action<Exception>? exceptionHandler = null)
+    public async Task SubscribeAsync(string topic, Action<string> action)
     {
         _mqttClient.ApplicationMessageReceivedAsync += e =>
         {
-            try
-            {
-                var message = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
-                action(message);
-                return Task.CompletedTask;
-            }
-            catch (Exception ex)
-            {
-                if (exceptionHandler != null)
-                    exceptionHandler(ex);
-                return Task.CompletedTask;
-            }
+            var message = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+            action(message);
+            return Task.CompletedTask;
         };
         await _mqttClient.SubscribeAsync(new MqttTopicFilterBuilder()
             .WithTopic(topic)

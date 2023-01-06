@@ -42,7 +42,7 @@ public class RequestClient
 
         return request;
     }
-    public async Task SubscribeResponseAsync(string topic, Action<Exception>? exceptionHandler = null)
+    public async Task SubscribeResponseAsync(string topic)
     {
         await _client.SubscribeAsync(topic, message =>
         {
@@ -57,11 +57,9 @@ public class RequestClient
             }
             else
                 return;
-        }, exceptionHandler);
+        });
     }
-    public async Task SubscribeRequestAsync<TRequest, TResponse>(string requestTopic, string responseTopic,
-        Func<TRequest, TResponse> func,
-        Action<Exception>? exceptionHandler = null)
+    public async Task SubscribeRequestAsync<TRequest, TResponse>(string requestTopic, string responseTopic, Func<TRequest, TResponse> func)
     {
         await _client.SubscribeAsync(requestTopic, async message =>
         {
@@ -70,10 +68,15 @@ public class RequestClient
                 return;
 
             var requestMessage = JsonConvert.DeserializeObject<TRequest>(request.Payload);
+            
             var response = func(requestMessage!);
+
+            if(response is null)
+                return;
+
             request.Response = JsonConvert.SerializeObject(response);
 
             await _client.PublishAsync(responseTopic, JsonConvert.SerializeObject(request));
-        }, exceptionHandler);
+        });
     }
 }
