@@ -42,13 +42,13 @@ public class RequestClient
 
         return request;
     }
-    public async Task SubscribeResponseAsync(string topic)
+    public async Task SubscribeResponseAsync(string topic, Action<Exception>? exceptionHandler = null)
     {
         await _client.SubscribeAsync(topic, message =>
         {
             var request = JsonConvert.DeserializeObject<RequestInfo>(message);
             if (request is null)
-                throw new JsonException("Invalid request format.");
+                return;
 
             if (_requestCache.TryGetValue(request.RequestId, out var cachedRequest))
             {
@@ -56,22 +56,24 @@ public class RequestClient
                 cachedRequest.IsResponded = true;
             }
             else
-                throw new KeyNotFoundException("Request not found.");
-        });
+                return;
+        }, exceptionHandler);
     }
-    public async Task SubscribeRequestAsync<TRequest, TResponse>(string requestTopic, string responseTopic, Func<TRequest, TResponse> func)
+    public async Task SubscribeRequestAsync<TRequest, TResponse>(string requestTopic, string responseTopic,
+        Func<TRequest, TResponse> func,
+        Action<Exception>? exceptionHandler = null)
     {
         await _client.SubscribeAsync(requestTopic, async message =>
         {
             var request = JsonConvert.DeserializeObject<RequestInfo>(message);
             if (request is null)
-                throw new JsonException("Invalid request format.");
+                return;
 
             var requestMessage = JsonConvert.DeserializeObject<TRequest>(request.Payload);
             var response = func(requestMessage!);
             request.Response = JsonConvert.SerializeObject(response);
-            
+
             await _client.PublishAsync(responseTopic, JsonConvert.SerializeObject(request));
-        });
+        }, exceptionHandler);
     }
 }
