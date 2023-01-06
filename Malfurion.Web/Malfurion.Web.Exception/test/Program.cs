@@ -1,4 +1,5 @@
 using Malfurion.Web.Exception;
+using Malfurion.Web.Exception.Verifiers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMalfurionWebException();
@@ -11,6 +12,8 @@ app.MapGet("/", () =>
 });
 app.MapGet("/1", () =>
 {
+    string str = "adqw12312__";
+    StringVerifier.OnlyLettersAndNumbers(str);
     throw new BadRequest("badreuqest");
 });
 app.MapGet("/2", () =>
