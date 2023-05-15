@@ -1,6 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 
-builder.Services.AddHangfire(configuration => configuration.)
+builder.Services.AddHangfire(configuration => configuration
+    .UseSerilogLogProvider()
+    .UseInMemoryStorage());
+builder.Services.AddHangfireServer();
+
+var app = builder.Build();
+app.UseHangfireDashboard();
+
+Installer.InstallSerilog();
+Installer.InstallJobs();
 
 app.Run();
