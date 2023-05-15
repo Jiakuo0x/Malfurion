@@ -19,7 +19,7 @@ public static class Installer
         foreach (var type in types)
         {
             var job = Activator.CreateInstance(type) as JobBase;
-            if(job == null) continue;
+            if (job == null) continue;
             RecurringJob.AddOrUpdate(job.JobName, () => job.Execute(), job.CronExpression);
         }
     }
