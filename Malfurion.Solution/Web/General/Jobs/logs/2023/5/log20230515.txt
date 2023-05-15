@@ -1,0 +1,26 @@
+2023-05-15 18:26:09.075 +08:00 [INF] Starting Hangfire Server using job storage: 'In-Memory Storage'
+2023-05-15 18:26:09.093 +08:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2023-05-15 18:26:09.102 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 successfully announced in 0.9166 ms
+2023-05-15 18:26:09.104 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2023-05-15 18:26:09.112 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 all the dispatchers started
+2023-05-15 18:27:49.355 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 caught stopping signal...
+2023-05-15 18:27:49.357 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 All dispatchers stopped
+2023-05-15 18:27:49.358 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 successfully reported itself as stopped in 0.3515 ms
+2023-05-15 18:27:49.359 +08:00 [INF] Server chbeilt0062:58768:3d8b09b4 has been stopped in total 3.4313 ms
+2023-05-15 18:30:17.903 +08:00 [INF] Starting Hangfire Server using job storage: 'In-Memory Storage'
+2023-05-15 18:30:17.920 +08:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2023-05-15 18:30:17.932 +08:00 [INF] Server chbeilt0062:43244:eaa05551 successfully announced in 1.1282 ms
+2023-05-15 18:30:17.934 +08:00 [INF] Server chbeilt0062:43244:eaa05551 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2023-05-15 18:30:17.945 +08:00 [INF] Server chbeilt0062:43244:eaa05551 all the dispatchers started
+2023-05-15 18:31:04.645 +08:00 [INF] Server chbeilt0062:43244:eaa05551 caught stopping signal...
+2023-05-15 18:31:04.647 +08:00 [INF] Server chbeilt0062:43244:eaa05551 All dispatchers stopped
+2023-05-15 18:31:04.649 +08:00 [INF] Server chbeilt0062:43244:eaa05551 successfully reported itself as stopped in 0.2561 ms
+2023-05-15 18:31:04.649 +08:00 [INF] Server chbeilt0062:43244:eaa05551 has been stopped in total 3.4312 ms
