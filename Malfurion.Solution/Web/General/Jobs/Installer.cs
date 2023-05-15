@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace Jobs;
 
 public static class Installer
@@ -11,7 +13,14 @@ public static class Installer
     }
     public static void InstallJobs()
     {
-        RecurringJob.AddOrUpdate<DemoJob>(nameof(DemoJob), job => job.Execute(), Cron.Minutely());
-        RecurringJob.AddOrUpdate<Demo2Job>(nameof(Demo2Job), job => job.Execute(), Cron.Minutely());
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        var types = assembly.GetTypes()
+            .Where(t => t.IsSubclassOf(typeof(JobBase)));
+        foreach (var type in types)
+        {
+            var job = Activator.CreateInstance(type) as JobBase;
+            if(job == null) continue;
+            RecurringJob.AddOrUpdate(job.JobName, () => job.Execute(), job.CronExpression);
+        }
     }
 }

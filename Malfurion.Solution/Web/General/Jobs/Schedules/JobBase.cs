@@ -2,7 +2,8 @@ namespace Jobs.Schedules;
 public abstract class JobBase
 {
     private static Dictionary<string, Serilog.Core.Logger> _JobLoggersDic = new Dictionary<string, Serilog.Core.Logger>();
-    protected abstract string JobName { get; }
+    public abstract string JobName { get; }
+    public abstract string CronExpression { get; }
     public abstract Task Execute();
     protected readonly Serilog.Core.Logger Logger;
 
