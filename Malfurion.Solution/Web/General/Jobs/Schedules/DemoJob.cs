@@ -2,7 +2,8 @@ namespace Jobs.Schedules;
 
 public class DemoJob : JobBase
 {
-    protected override string JobName => nameof(DemoJob);
+    public override string JobName => nameof(DemoJob);
+    public override string CronExpression => Cron.Minutely();
 
     private readonly Services.Demo.DemoService _demoService;
     public DemoJob(Services.Demo.DemoService demoService)

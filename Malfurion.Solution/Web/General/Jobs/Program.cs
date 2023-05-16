@@ -15,11 +15,11 @@ builder.Services.AddHangfire(configuration => configuration
     .UseSerilogLogProvider()
     .UseInMemoryStorage());
 builder.Services.AddHangfireServer();
+builder.Services.AddJobs();
 
 var app = builder.Build();
 app.UseHangfireDashboard();
-
-Jobs.Installer.InstallSerilog();
-Jobs.Installer.InstallJobs();
+app.UseSerilog();
+app.UseJobs();
 
 app.Run();

@@ -5,7 +5,7 @@ public abstract class JobBase
     protected readonly Serilog.Core.Logger Logger;
     public JobBase()
     {
-        if(_JobLoggersDic.ContainsKey(JobName))
+        if (_JobLoggersDic.ContainsKey(JobName))
         {
             Logger = _JobLoggersDic[JobName];
             return;
@@ -19,6 +19,7 @@ public abstract class JobBase
         _JobLoggersDic.Add(JobName, Logger);
     }
 
-    protected abstract string JobName { get; }
+    public abstract string JobName { get; }
+    public abstract string CronExpression { get; }
     public abstract Task Execute();
 }
